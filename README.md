@@ -14,7 +14,7 @@ apt install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
 make && sudo make install
 rm /usr/local/nginx/conf/nginx.conf
 wget -P /usr/local/nginx/conf/ https://raw.githubusercontent.com/UnconstructiveTab/nginx-forwardproxy/master/nginx.conf
-wget https://github-file/nginx.service
+wget https://raw.githubusercontent.com/UnconstructiveTab/nginx-forwardproxy/master/nginx.service
 cp nginx.service /etc/systemd/system/nginx.service
 systemctl start nginx.service
 systemctl enable nginx.service
