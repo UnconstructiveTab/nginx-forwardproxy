@@ -1,0 +1,19 @@
+[Unit]
+Description=The NGINX HTTP and forward proxy server
+After=syslog.target network-online.target remote-fs.target nss-lookup.target
+Wants=network-online.target
+
+[Service]
+Restart=on-abnormal
+LimitNOFILE=16384
+
+
+ExecStart=/usr/local/nginx/sbin/nginx
+ExecReload=/bin/kill -USR1 $MAINPID
+
+KillMode=mixed
+KillSignal=SIGQUIT
+TimeoutStopSec=5s
+
+[Install]
+WantedBy=multi-user.target
