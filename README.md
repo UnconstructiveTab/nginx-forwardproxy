@@ -10,7 +10,7 @@ cd ../
 cd nginx-*
 patch -p1 < ../ngx_http_proxy_connect_module/proxy_connect.patch
 apt install libpcre3 libpcre3-dev zlib1g zlib1g-dev libssl-dev
-./configure --add-module=/tmp/ngx_http_proxy_connect_modul
+./configure --add-module=/tmp/ngx_http_proxy_connect_module
 make && sudo make install
 rm /usr/local/nginx/conf/nginx.conf
 wget -P /usr/local/nginx/conf/ https://raw.githubusercontent.com/UnconstructiveTab/nginx-forwardproxy/master/nginx.conf
